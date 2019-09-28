@@ -1,6 +1,5 @@
 import scala.io.Source
 import scala.util.Random
-import util.control.Breaks
 
 object Hangman extends App {
   private val random = new Random()
@@ -23,7 +22,7 @@ object Hangman extends App {
       doneMistakes += 1
       println(s"Missed, mistake $doneMistakes out of $maxMistakes.")
     }
-    mask = makeMask(letters, word)
+    mask = makeMask(word, letters)
     println("The word: " + mask)
     if (checkWin(mask)) {
       println("You won!")
@@ -34,26 +33,26 @@ object Hangman extends App {
   }
 
 
-  private def readDict(path: String): List[String] = {
+  def readDict(path: String): List[String] = {
     val bufferedSource = Source.fromFile("src/main/resources/dict.txt")
     val words = bufferedSource.getLines.toList
     bufferedSource.close
     words
   }
 
-  private def chooseWord(words: List[String], random: Random): String = {
+  def chooseWord(words: List[String], random: Random): String = {
     words(random.nextInt(words.length))
   }
 
-  private def makeMask(letters: Set[Char], word: String): String = {
+  def makeMask(word: String, letters: Set[Char]): String = {
     word.map((x: Char) => if (letters.contains(x)) x else '*' )
   }
 
-  private def checkLetter(word: String, letter: Char): Boolean = {
+  def checkLetter(word: String, letter: Char): Boolean = {
     word.contains(letter)
   }
 
-  private def checkWin(mask: String): Boolean = {
+  def checkWin(mask: String): Boolean = {
     !(mask.contains("*"))
   }
 }
