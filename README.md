@@ -19,9 +19,9 @@ in the root directory of **Hangman**.
 
 ### Integrations
 
-Project has integrations with [Travic CI] and [CodeCov]. See links and brief information in the header.
+Project has integrations with [Travis CI] and [CodeCov]. See links and brief information in the header.
 
-[Travic CI]: https://travis-ci.org
+[Travis CI]: https://travis-ci.org
 [CodeCov]: https://codecov.io
 
 ### Static Code Analysis
