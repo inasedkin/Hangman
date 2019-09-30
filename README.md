@@ -7,9 +7,9 @@
 
 MIPT Course on Software Design, Fall 2019.
 
-### Setup
+### Running
 
-To compile **Hangman** installed [sbt] is required. Once [sbt] is installed, run
+To run **Hangman** installed [sbt] is required. Once [sbt] is installed, run
 ```console
 user@host:~/Hangman$ sbt run
 ```
